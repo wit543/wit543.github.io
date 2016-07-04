@@ -1,1 +1,31 @@
-Hello World?!sss
+<!DOCTYPE html>
+<html>
+<head>
+<title>WIT543</title>
+</head>
+<body>
+<script src="https://cs.stanford.edu/people/karpathy/convnetjs/build/convnet-min.js"></script>
+<!-- javascript goes here -->
+<script type="text/javascript">
+ 
+function periodic() {
+  var d = document.getElementById('egdiv');
+  d.innerHTML = 'Random number: ' + Math.random()
+}
+ 
+var net; // declared outside -> global variable in window scope
+function start() {
+  // this gets executed on startup
+  //... 
+  net = new convnetjs.Net();
+  // ...
+ 
+  // example of running something every 1 second
+  setInterval(periodic, 1000);
+}
+ 
+</script>
+<body onload="start()">
+<div id="egdiv"></div>
+</body>
+</html>
